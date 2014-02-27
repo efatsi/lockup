@@ -12,10 +12,10 @@
   <% else %>
     <p><%= form.password_field "codeword", :value => @codeword, :class => 'nope' %></p>
   <% end %>
-    
+
   <% if ENV["LOCKUP_HINT"].present? %>
     <p id='hint_icon'>?</p>
-    <p id='hint'><%= ENV["LOCKUP_HINT"] %></p>
+    <p id='hint'><%== ENV["LOCKUP_HINT"] %></p>
   <% end %>
 
   <% if params[:return_to].present? %>
@@ -23,6 +23,6 @@
   <% elsif @return_to.present? %>
     <%= form.hidden_field "return_to", :value => @return_to %>
   <% end %>
-    
+
   <p><%= button_tag "Go" %></p>
 <% end %>
